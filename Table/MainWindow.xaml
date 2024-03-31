@@ -1,0 +1,202 @@
+﻿<Window x:Class="Table.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Table"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        
+        <Grid.Background>
+            <ImageBrush ImageSource="view/fundalVerde.jpg" TileMode="Tile"/>
+        </Grid.Background>
+        <Grid Grid.ColumnSpan="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="13*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Name="startGrid" Panel.ZIndex="1" Background="LightGray" Margin="136,84,114.4,97.4">
+                <Button Click="startJoc"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="113" Height="48">Start new Game</Button>
+                <TextBlock Name="castigatorText" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"></TextBlock>
+               
+            </Grid>
+            <Grid x:Name="tablaDeJoc" PreviewMouseDown="onClick">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Tag="25" Grid.Column="1" Grid.RowSpan="3" Background="#FF592900">
+                    <StackPanel x:Name="campEliminat" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Name="exceptionOutput" Grid.Row="1" Grid.ColumnSpan="3">
+                    <TextBlock Name="exceptionMessage" FontSize="24" HorizontalAlignment="Center" Foreground="Yellow" FontWeight="Bold"></TextBlock>
+                </Grid>
+                <UniformGrid Columns="6">
+                    <Grid Name="G1" Tag="11">
+                        <Polygon Points="0,0 40,0 20,125" Fill="#FFF1DBBA" Stretch="Fill" />
+                        <StackPanel Name="f11"/>
+                    </Grid>
+                    <Grid Tag="10">
+                        <Polygon Grid.Column="1" Points="0,0 40,0 20,125" Fill="#FF9A4D0A" Stretch="Fill" />
+                        <StackPanel Name="f10">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="9">
+                        <Polygon Points="0,0 40,0 20,125" Fill="#FFF1DBBA" Stretch="Fill" />
+                        <StackPanel Name="f9"/>
+                    </Grid>
+                    <Grid Tag="8">
+                        <Polygon Points="0,0 40,0 20,125" Fill="#FF9A4D0A" Stretch="Fill" />
+                        <StackPanel Name="f8">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="7">
+                        <Polygon Points="0,0 40,0 20,125" Fill="#FFF1DBBA" Stretch="Fill" />
+                        <StackPanel Name="f7">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="6">
+                        <Polygon Points="0,0 40,0 20,125" Fill="#FF9A4D0A" Stretch="Fill" />
+                        <StackPanel Name="f6">
+                        </StackPanel>
+                    </Grid>
+                </UniformGrid>
+                <UniformGrid Columns="7" Grid.Column="2" Grid.Row="0">
+                    <Grid Tag="5">
+                        <Polygon Points="0,0 40,0 20,125" Fill="#FFF1DBBA" Stretch="Fill" />
+                        <StackPanel Name="f5">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="4">
+                        <Polygon Grid.Column="1" Points="0,0 40,0 20,125" Fill="#FF9A4D0A" Stretch="Fill" />
+                        <StackPanel Name="f4">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="3">
+                        <Polygon Points="0,0 40,0 20,125" Fill="#FFF1DBBA" Stretch="Fill" />
+                        <StackPanel Name="f3">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="2">
+                        <Polygon Points="0,0 40,0 20,125" Fill="#FF9A4D0A" Stretch="Fill" />
+                        <StackPanel Name="f2">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="1">
+                        <Polygon Points="0,0 40,0 20,125" Fill="#FFF1DBBA" Stretch="Fill" >
+                        </Polygon>
+                        <StackPanel Name="f1">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="0">
+                        <Polygon Points="0,0 40,0 20,125" Stretch="Fill" Fill="#FF9A4D0A" >
+                        </Polygon>
+                        <StackPanel Name="f0">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="26" Grid.Row="0">
+                        <Rectangle Fill="#FF592900" Stretch="Fill" Margin="3,0,3,3"></Rectangle>
+                        <StackPanel Name="f26"/>
+                    </Grid>
+                </UniformGrid>
+                <UniformGrid Columns="6" Grid.Column="0" Grid.Row="2">
+                    <Grid Tag="12">
+                        <Polygon Points="0,125 10,0 20,125" Fill="#FF9A4D0A" Stretch="Fill" />
+                        <StackPanel Name="f12">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="13">
+                        <Polygon Points="0,125 10,0 20,125" Fill="#FFF1DBBA" Stretch="Fill" />
+                        <StackPanel Name="f13">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="14">
+                        <Polygon Points="0,125 10,0 20,125" Fill="#FF9A4D0A" Stretch="Fill" />
+                        <StackPanel Name="f14">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="15">
+                        <Polygon Points="0,125 10,0 20,125" Fill="#FFF1DBBA" Stretch="Fill" />
+                        <StackPanel Name="f15">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="16">
+                        <Polygon Points="0,125 10,0 20,125" Fill="#FF9A4D0A" Stretch="Fill" />
+                        <StackPanel Name="f16">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="17">
+                        <Polygon Points="0,125 10,0 20,125" Fill="#FFF1DBBA" Stretch="Fill" />
+                        <StackPanel Name="f17">
+                        </StackPanel>
+                    </Grid>
+                </UniformGrid>
+                <UniformGrid Columns="7" Grid.Column="2" Grid.Row="2">
+                    <Grid Tag="18">
+                        <Polygon Points="0,125 10,0 20,125" Fill="#FF9A4D0A" Stretch="Fill" />
+                        <StackPanel Name="f18">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="19">
+                        <Polygon Points="0,125 10,0 20,125" Fill="#FFF1DBBA" Stretch="Fill" />
+                        <StackPanel Name="f19">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="20">
+                        <Polygon Points="0,125 10,0 20,125" Fill="#FF9A4D0A" Stretch="Fill" />
+                        <StackPanel Name="f20">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="21">
+                        <Polygon Points="0,125 10,0 20,125" Fill="#FFF1DBBA" Stretch="Fill" />
+                        <StackPanel Name="f21"/>
+                    </Grid>
+                    <Grid Tag="22">
+                        <Polygon Points="0,125 10,0 20,125" Fill="#FF9A4D0A" Stretch="Fill" />
+                        <StackPanel Name="f22">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="23">
+                        <Polygon Points="0,125 10,0 20,125" Fill="#FFF1DBBA" Stretch="Fill" />
+                        <StackPanel Name="f23">
+                        </StackPanel>
+                    </Grid>
+                    <Grid Tag="27" Grid.Row="2">
+                        <Rectangle Fill="#FF592900" Stretch="Fill" Margin="3,3,3,0"></Rectangle>
+                        <StackPanel Name="f27" VerticalAlignment="Bottom"></StackPanel>
+                    </Grid>
+                </UniformGrid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="btnZar" Grid.Row="1" Content="Roll dices" VerticalAlignment="Top" Width="79" Click="aruncareZaruri" HorizontalAlignment="Left" IsEnabled="False" Margin="14,42,0,0"/>
+                <Image Name="zar1Imagine" Grid.Row="1" VerticalAlignment="Top" Width="30" Height="30" Margin="9,0,40,0" />
+                <Image Name="zar2Imagine" Grid.Row="1" VerticalAlignment="Top" Width="30" Height="30" Margin="40,0,9,0" />
+                
+                <Border BorderBrush="#FF7C4300" Grid.RowSpan="3" BorderThickness="5">
+                </Border>
+                <Grid Name="J1Info" Grid.Row="0">
+                    <TextBlock Name="numeJ1" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="18"></TextBlock>
+                    <Ellipse Name="piesaJ1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Height="40"></Ellipse>
+                </Grid>
+                <Grid Name="J2Info" Grid.Row="2">
+
+                    <TextBlock Name="numeJ2" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="18"></TextBlock>
+                    <Ellipse Name="piesaJ2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Height="40" Margin="5,0,0,0" Grid.Column="1"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
